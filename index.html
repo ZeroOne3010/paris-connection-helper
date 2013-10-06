@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="paris-connection-helper">
+<head>
+<meta charset="UTF-8" />
+<link href="css/mobiscroll.core.css" rel="stylesheet" type="text/css" />
+<link href="css/parisConnectionHelper.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script type="text/javascript" src="js/mobiscroll.core.js"></script>
+<script type="text/javascript" src="js/mobiscroll.select.js"></script>
+<script type="text/javascript" src="js/parisConnectionApp.js"></script>
+<title>Paris Connection scoring helper</title>
+</head>
+<body ng-controller="MainController">
+
+	<table>
+		<thead>
+			<tr>
+				<th>Share values</th>
+				<th ng-repeat="color in colors"><select ng-model="companyShareValues[color.name]"
+					ng-options="item.key as item.value for item in items"
+					class="scroller" name="{{color.name}}"></select></th>
+				<th>{{companyShareValues | json}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players">
+				<td>{{player.name}}</td>
+				<td ng-repeat="color in colors"><select ng-model="player.shares[color.name]"
+					ng-options="item.key as item.value for item in items"
+					class="scroller" name="{{color.name}}"></select></td>
+				<td>{{ playerTotalScore(player) }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
