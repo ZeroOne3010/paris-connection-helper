@@ -6,3 +6,44 @@
 	min-width: 10px;
 	padding: 0px;
 }
+
+.top-separator {
+	border-top: solid thin #bbbbbb;
+}
+
+.dwl { /* Scroller name, or "legend" */
+	text-transform: capitalize;
+}
+
+.player-row .dwl {
+	display: none;
+}
+
+.player-row .dwc {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.color-red .dw-ul, .color-red .dwww {
+	background-color: red;
+}
+
+.color-blue .dw-ul, .color-blue .dwww {
+	background-color: blue;
+}
+
+.color-black .dw-ul, .color-black .dwww {
+	background-color: #666666;
+}
+
+.color-brown .dw-ul, .color-brown .dwww {
+	background-color: #8B4513;
+}
+
+.color-yellow .dw-ul, .color-yellow .dwww {
+	background-color: #FFFF00;
+}
+
+.color-purple .dw-ul, .color-purple .dwww {
+	background-color: #8A2BE2;
+}

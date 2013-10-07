@@ -33,26 +33,29 @@ app.controller('MainController', function($scope) {
   }, {
     name : 'Player3',
     shares : jQuery.extend({}, emptyValues)
+  }, {
+    name : 'Player4',
+    shares : jQuery.extend({}, emptyValues)
+  }, {
+    name : 'Player5',
+    shares : jQuery.extend({}, emptyValues)
+  }, {
+    name : 'Player6',
+    shares : jQuery.extend({}, emptyValues)
   } ];
 
   $scope.colors = [ {
     name : 'red',
-    color : '#ff0000'
   }, {
     name : 'blue',
-    color : '#0000ff'
   }, {
     name : 'black',
-    color : '#000000'
   }, {
     name : 'brown',
-    color : '#000000'
   }, {
     name : 'yellow',
-    color : '#000000'
   }, {
     name : 'purple',
-    color : '#000000'
   } ];
 });
 
