@@ -3,37 +3,45 @@ var app = angular.module('paris-connection-helper', []);
 app.controller('MainController', function($scope) {
   $scope.items = [];
   for ( var i = 0; i <= 30; i++) {
-    $scope.items.push({key: i, value: i});
+    $scope.items.push({
+      key : i,
+      value : i
+    });
   }
   $scope.playerTotalScore = function(player) {
     var totalScore = 0;
-    angular.forEach(player.shares, function(quantity,color){
+    angular.forEach(player.shares, function(quantity, color) {
       totalScore += quantity * $scope.companyShareValues[color];
     });
     return totalScore;
   };
-  $scope.companyShareValues = {};
+  emptyValues = {
+    red : 0,
+    blue : 0,
+    black : 0,
+    brown : 0,
+    yellow : 0,
+    purple : 0
+  };
+  $scope.companyShareValues = jQuery.extend({}, emptyValues);
   $scope.players = [ {
     name : 'Player1',
-    shares : {}
+    shares : jQuery.extend({}, emptyValues)
   }, {
     name : 'Player2',
-    shares : {}
+    shares : jQuery.extend({}, emptyValues)
   }, {
     name : 'Player3',
-    shares : {}
+    shares : jQuery.extend({}, emptyValues)
   } ];
-  
+
   $scope.colors = [ {
     name : 'red',
     color : '#ff0000'
   }, {
-    name : 'green',
-    color : '#00ff00'
-  }, {
     name : 'blue',
     color : '#0000ff'
-  }/*, {
+  }, {
     name : 'black',
     color : '#000000'
   }, {
@@ -45,7 +53,7 @@ app.controller('MainController', function($scope) {
   }, {
     name : 'purple',
     color : '#000000'
-  } */];
+  } ];
 });
 
 $(function() {
