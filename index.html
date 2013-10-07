@@ -27,9 +27,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-1 color-{{color.name}}" ng-repeat="color in colors"><select ng-model="companyShareValues[color.name]"
+			<div class="col-xs-1 color-{{color}}" ng-repeat="color in colors"><select ng-model="companyShareValues[color]"
 				ng-options="item.key as item.value for item in items"
-				class="scroller" name="{{color.name}}"></select></div>
+				class="scroller" name="{{color}}"></select></div>
 		</div>
 	</div>
 	<div ng-repeat="player in players">
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="row player-row">
-			<div class="col-xs-1 color-{{color.name}}" ng-repeat="color in colors"><select ng-model="player.shares[color.name]"
+			<div class="col-xs-1 color-{{color}}" ng-repeat="color in colors"><select ng-model="player.shares[color]"
 				ng-options="item.key as item.value for item in items"
 				class="scroller" name=""></select></div>
 		</div>

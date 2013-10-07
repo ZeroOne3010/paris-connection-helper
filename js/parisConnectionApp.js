@@ -44,19 +44,7 @@ app.controller('MainController', function($scope) {
     shares : jQuery.extend({}, emptyValues)
   } ];
 
-  $scope.colors = [ {
-    name : 'red',
-  }, {
-    name : 'blue',
-  }, {
-    name : 'black',
-  }, {
-    name : 'brown',
-  }, {
-    name : 'yellow',
-  }, {
-    name : 'purple',
-  } ];
+  $scope.colors = [ 'red', 'blue', 'black', 'brown', 'yellow', 'purple', ];
 });
 
 $(function() {
