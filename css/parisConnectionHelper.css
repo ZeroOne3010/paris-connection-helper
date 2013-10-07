@@ -1,3 +1,8 @@
 .scroller-input {
 	display: none;
 }
+
+.dwwr {
+	min-width: 10px;
+	padding: 0px;
+}
