@@ -19,7 +19,16 @@
 <title>Paris Connection scoring helper</title>
 </head>
 <body ng-controller="MainController">
-
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle"
+			data-toggle="dropdown">
+			Number of players <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li ng-repeat="num in numPlayersChoice"><a href="#" ng-click="$parent.numPlayers = num;">{{num}}</a></li>
+		</ul>
+	</div>
+	
 	<div>
 		<div class="row">
 			<div class="col-xs-6 text-center">
@@ -32,7 +41,7 @@
 				class="scroller" name="{{color}}"></select></div>
 		</div>
 	</div>
-	<div ng-repeat="player in players">
+	<div ng-repeat="player in players" ng-show="$index < numPlayers">
 		<div class="row">
 			<div class="col-xs-3 text-right top-separator">
 				<strong>{{player.name}}</strong>

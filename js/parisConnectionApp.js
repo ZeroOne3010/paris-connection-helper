@@ -1,6 +1,8 @@
 var app = angular.module('paris-connection-helper', []);
 
 app.controller('MainController', function($scope) {
+  $scope.numPlayers = 3;
+  $scope.numPlayersChoice = [ 2, 3, 4, 5, 6 ];
   $scope.items = [];
   for ( var i = 0; i <= 30; i++) {
     $scope.items.push({
