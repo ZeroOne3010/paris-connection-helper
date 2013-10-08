@@ -2,7 +2,13 @@ var app = angular.module('paris-connection-helper', []);
 
 app.controller('MainController', function($scope) {
   $scope.numPlayers = 3;
-  $scope.numPlayersChoice = [ 2, 3, 4, 5, 6 ];
+  $scope.allowedLocomotivesByNumberOfPlayers = {
+    2 : 20,
+    3 : 20,
+    4 : 15,
+    5 : 12,
+    6 : 10
+  };
   $scope.items = [];
   for ( var i = 0; i <= 30; i++) {
     $scope.items.push({
@@ -14,6 +20,10 @@ app.controller('MainController', function($scope) {
     var totalScore = 0;
     angular.forEach(player.shares, function(quantity, color) {
       totalScore += quantity * $scope.companyShareValues[color];
+      var maxLocomotives = $scope.allowedLocomotivesByNumberOfPlayers[$scope.numPlayers];
+      if (quantity > maxLocomotives) {
+        totalScore -= 20 * (quantity - maxLocomotives);
+      }
     });
     return totalScore;
   };

@@ -25,7 +25,7 @@
 			Number of players <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
-			<li ng-repeat="num in numPlayersChoice"><a href="#" ng-click="$parent.numPlayers = num;">{{num}}</a></li>
+			<li ng-repeat="(num, ignore) in allowedLocomotivesByNumberOfPlayers"><a href="#" ng-click="$parent.numPlayers = num;">{{num}}</a></li>
 		</ul>
 	</div>
 	
