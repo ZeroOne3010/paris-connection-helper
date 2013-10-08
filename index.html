@@ -17,6 +17,7 @@
 <title>Paris Connection scoring helper</title>
 </head>
 <body ng-controller="MainController">
+<div ng-click="hideNameEditors()">
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle"
 			data-toggle="dropdown">
@@ -40,9 +41,10 @@
 		</div>
 	</div>
 	<div ng-repeat="player in players" ng-show="$index < numPlayers">
-		<div class="row">
+		<div class="row player-header-row">
 			<div class="col-xs-3 text-right top-separator">
-				<strong>{{player.name}}</strong>
+				<strong ng-click="showNameEditor($event,$index)" ng-show="!showNameEditor[$index]">{{player.name}}</strong>
+				<input ng-click="$event.stopPropagation()" type="text" ng-model="player.name" ng-show="showNameEditor[$index]"/>
 			</div>
 			<div class="col-xs-3 text-left top-separator">
 				<strong>{{ playerTotalScore(player) }} pts</strong>
@@ -54,6 +56,6 @@
 				class="scroller" name=""></select></div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>

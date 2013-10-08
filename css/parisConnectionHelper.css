@@ -1,3 +1,7 @@
+ .player-header-row {
+ 	min-height: 27px;
+ }
+
 .scroller-input {
 	display: none;
 }
