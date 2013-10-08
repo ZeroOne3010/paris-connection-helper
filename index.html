@@ -22,7 +22,7 @@
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle"
 			data-toggle="dropdown">
-			Number of players <span class="caret"></span>
+			Number of players ({{numPlayers}}) <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
 			<li ng-repeat="(num, ignore) in allowedLocomotivesByNumberOfPlayers"><a href="#" ng-click="$parent.numPlayers = num;">{{num}}</a></li>
