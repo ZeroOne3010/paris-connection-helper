@@ -2,6 +2,7 @@
 <html lang="en" x-ng-app="paris-connection-helper">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="css/mobiscroll.core.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
@@ -17,43 +18,48 @@
 <title>Paris Connection scoring helper</title>
 </head>
 <body x-ng-controller="MainController">
-<div x-ng-click="hideNameEditors()">
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle"
-			data-toggle="dropdown">
-			Number of players ({{numPlayers}}) <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li x-ng-repeat="(num, ignore) in allowedLocomotivesByNumberOfPlayers"><a href="#" x-ng-click="$parent.numPlayers = num;">{{num}}</a></li>
-		</ul>
-	</div>
-	
-	<div>
-		<div class="row">
-			<div class="col-xs-6 text-center">
-				<strong>Share values</strong>
+<div class="container" x-ng-click="hideNameEditors()">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong>Share values</strong>
+			<div class="btn-group pull-right">
+				<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">
+					Number of players ({{numPlayers}}) <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li x-ng-repeat="(num, ignore) in allowedLocomotivesByNumberOfPlayers"><a href="#" x-ng-click="$parent.numPlayers = num;">{{num}}</a></li>
+				</ul>
 			</div>
+			<div class="clearfix"></div>
 		</div>
-		<div class="row">
-			<div class="col-xs-1 color-{{color}}" x-ng-repeat="color in colors"><select x-ng-model="companyShareValues[color]"
-				x-ng-options="item.key as item.value for item in items"
-				class="scroller" name="{{color}}"></select></div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-2 color-{{color}}" x-ng-repeat="color in colors"><select x-ng-model="companyShareValues[color]"
+					x-ng-options="item.key as item.value for item in items"
+					class="scroller" name="{{color}}"></select></div>
+			</div>
 		</div>
 	</div>
 	<div x-ng-repeat="player in players" x-ng-show="$index < numPlayers">
-		<div class="row player-header-row">
-			<div class="col-xs-3 text-right top-separator">
-				<strong x-ng-click="showNameEditor($event,$index)" x-ng-show="!showNameEditor[$index]">{{player.name}}</strong>
-				<input x-ng-click="$event.stopPropagation()" type="text" x-ng-model="player.name" x-ng-show="showNameEditor[$index]"/>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row player-header-row">
+					<div class="col-xs-6 text-right">
+						<strong x-ng-click="showNameEditor($event,$index)" x-ng-show="!showNameEditor[$index]">{{player.name}}</strong>
+						<input x-ng-click="$event.stopPropagation()" type="text" x-ng-model="player.name" x-ng-show="showNameEditor[$index]"/>
+					</div>
+					<div class="col-xs-6 text-left">
+						<strong>{{ playerTotalScore(player) }} pts</strong>
+					</div>
+				</div>
 			</div>
-			<div class="col-xs-3 text-left top-separator">
-				<strong>{{ playerTotalScore(player) }} pts</strong>
+			<div class="panel-body">
+				<div class="row player-row">
+					<div class="col-xs-2 color-{{color}}" x-ng-repeat="color in colors"><select x-ng-model="player.shares[color]"
+						x-ng-options="item.key as item.value for item in items"
+						class="scroller" name=""></select></div>
+				</div>
 			</div>
-		</div>
-		<div class="row player-row">
-			<div class="col-xs-1 color-{{color}}" x-ng-repeat="color in colors"><select x-ng-model="player.shares[color]"
-				x-ng-options="item.key as item.value for item in items"
-				class="scroller" name=""></select></div>
 		</div>
 	</div>
 </div>

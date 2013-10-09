@@ -1,6 +1,17 @@
- .player-header-row {
- 	min-height: 27px;
- }
+div.panel {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+div.panel > .panel-heading {
+	padding: 6px 15px;
+}
+
+div.panel > .panel-heading input {
+	border-width: 1px;
+	font-size: small;
+	padding: 0px;
+}
 
 .scroller-input {
 	display: none;

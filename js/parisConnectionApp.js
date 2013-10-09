@@ -77,6 +77,6 @@ $(function() {
     display : 'inline',
     mode : 'mixed',
     inputClass : 'scroller-input',
-    width : 40,
+    width : 55,
   });
 });
