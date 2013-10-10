@@ -45,8 +45,8 @@
 			<div class="panel-heading">
 				<div class="row player-header-row">
 					<div class="col-xs-6 text-right">
-						<strong x-ng-click="showNameEditor($event,$index)" x-ng-show="!showNameEditor[$index]">{{player.name}}</strong>
-						<input x-ng-click="$event.stopPropagation()" type="text" x-ng-model="player.name" x-ng-show="showNameEditor[$index]"/>
+						<strong x-ng-click="showNameEditor($event,$index)" x-ng-show="!nameEditorVisible[$index]">{{player.name}}</strong>
+						<input x-ng-click="$event.stopPropagation()" type="text" x-ng-model="player.name" x-ng-show="nameEditorVisible[$index]"/>
 					</div>
 					<div class="col-xs-6 text-left">
 						<strong>{{ playerTotalScore(player) }} pts</strong>

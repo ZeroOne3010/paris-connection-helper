@@ -9,16 +9,16 @@ app.controller('MainController', function($scope) {
     5 : 12,
     6 : 10
   };
-  $scope.showNameEditor = [];
+  $scope.nameEditorVisible = [];
   $scope.hideNameEditors = function() {
     for ( var i = 0; i < 6; i++) {
-      $scope.showNameEditor[i] = false;
+      $scope.nameEditorVisible[i] = false;
     }
   };
   $scope.showNameEditor = function(event, index) {
     event.stopPropagation();
     $scope.hideNameEditors();
-    $scope.showNameEditor[index] = true;
+    $scope.nameEditorVisible[index] = true;
   };
   $scope.hideNameEditors();
   $scope.items = [];
