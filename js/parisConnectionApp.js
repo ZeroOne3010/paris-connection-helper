@@ -30,13 +30,15 @@ app.controller('MainController', function($scope) {
   }
   $scope.playerTotalScore = function(player) {
     var totalScore = 0;
+    var totalShares = 0;
     angular.forEach(player.shares, function(quantity, color) {
+      totalShares += quantity;
       totalScore += quantity * $scope.companyShareValues[color];
-      var maxLocomotives = $scope.allowedLocomotivesByNumberOfPlayers[$scope.numPlayers];
-      if (quantity > maxLocomotives) {
-        totalScore -= 20 * (quantity - maxLocomotives);
-      }
     });
+    var maxLocomotives = $scope.allowedLocomotivesByNumberOfPlayers[$scope.numPlayers];
+    if (totalShares > maxLocomotives) {
+      totalScore -= 20 * (totalShares - maxLocomotives);
+    }
     return totalScore;
   };
   emptyValues = {
