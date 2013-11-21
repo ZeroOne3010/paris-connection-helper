@@ -52,22 +52,22 @@ app.controller('MainController', function($scope) {
   $scope.companyShareValues = jQuery.extend({}, emptyValues);
   $scope.players = [ {
     name : 'Player1',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   }, {
     name : 'Player2',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   }, {
     name : 'Player3',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   }, {
     name : 'Player4',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   }, {
     name : 'Player5',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   }, {
     name : 'Player6',
-    shares : jQuery.extend({}, emptyValues)
+    shares : angular.copy(emptyValues)
   } ];
 
   $scope.colors = [ 'red', 'blue', 'black', 'brown', 'yellow', 'purple', ];
