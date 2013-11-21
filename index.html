@@ -22,6 +22,9 @@
 			<strong>Share values</strong>
 			<span>(Max shares per player: {{allowedLocomotivesByNumberOfPlayers[numPlayers]}})</span>
 			<div class="btn-group pull-right">
+				<button type="button" class="btn btn-default btn-xs" x-ng-click="reset()">
+					Reset
+				</button>
 				<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">
 					Number of players ({{numPlayers}}) <span class="caret"></span>
 				</button>

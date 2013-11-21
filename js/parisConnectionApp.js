@@ -71,6 +71,16 @@ app.controller('MainController', function($scope) {
   } ];
 
   $scope.colors = [ 'red', 'blue', 'black', 'brown', 'yellow', 'purple', ];
+
+  $scope.reset = function() {
+    $('.scroller').each(function() {
+      $(this).mobiscroll('setValue', [ '0' ]);
+    });
+    $.each($scope.players, function(index, value) {
+      value.shares = angular.copy(emptyValues);
+    });
+    $scope.companyShareValues = angular.copy(emptyValues);
+  };
 });
 
 $(function() {
