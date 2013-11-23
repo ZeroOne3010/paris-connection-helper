@@ -81,6 +81,22 @@ app.controller('MainController', function($scope) {
     });
     $scope.companyShareValues = angular.copy(emptyValues);
   };
+
+  $scope.playerRank = function(player) {
+    var allScores = [];
+    $.each($scope.players, function(index, value) {
+      allScores.push($scope.playerTotalScore(value));
+    });
+    allScores.sort(function(a, b) {
+      return b - a
+    });
+    for ( var i = 0; i < allScores.length; i++) {
+      if (allScores[i] == $scope.playerTotalScore(player)) {
+        return i + 1;
+      }
+    }
+    return -1;
+  };
 });
 
 $(function() {

@@ -47,6 +47,7 @@
 			<div class="panel-heading">
 				<div class="row player-header-row">
 					<div class="col-xs-6 text-right">
+						<span class="badge badge-rank-{{ playerRank(player) }}" x-ng-show="playerTotalScore(player) > 0">{{ playerRank(player) }}</span>
 						<strong x-ng-click="showNameEditor($event,$index)" x-ng-show="!nameEditorVisible[$index]">{{player.name}}</strong>
 						<input x-ng-click="$event.stopPropagation()" type="text" x-ng-model="player.name" x-ng-show="nameEditorVisible[$index]"/>
 					</div>

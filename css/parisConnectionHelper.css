@@ -62,3 +62,21 @@ div.panel > .panel-heading input {
 .color-purple .dw-ul, .color-purple .dwww {
 	background-color: #8A2BE2;
 }
+
+.badge {
+	background-color: #FFFFFF;
+	color: black;
+}
+
+.badge-rank-1 {
+	background-color: #FFD700;
+}
+
+.badge-rank-2 {
+	background-color: #C0C0C0;
+}
+
+.badge-rank-3 {
+	background-color: #A67D3D;
+	color: #FAFAFA;
+}
